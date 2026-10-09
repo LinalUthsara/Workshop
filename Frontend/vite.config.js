@@ -1,0 +1,9 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  // The backend only allows CORS from http://localhost:5173, so fail loudly
+  // instead of silently moving to another port.
+  server: { port: 5173, strictPort: true },
+});
